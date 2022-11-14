@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface VideoChatAppTests : XCTestCase
+@interface videochatappTests : XCTestCase
 
 @end
 
-@implementation VideoChatAppTests
+@implementation videochatappTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
