@@ -11,8 +11,10 @@ import { StyleSheet, View } from 'react-native'
 import { SplashScreen } from './src/screens/SplashScreen'
 import { Signin } from './src/screens/Signin'
 import { Signup } from './src/screens/Signup'
+import { MeetingScreen } from './src/screens/MeetingScreen'
 import { EmailVerify } from './src/screens/EmailVerify'
-import { BottomTabBar } from './src/screens/BottomTabBar'
+import { BottomTabBar} from './src/components/BottomTabBar'
+import { MeetingBottomTabs} from './src/components/MeetingBottomTabs'
 import { NavigationContainer } from '@react-navigation/native'
 import { MyDrawer } from './src/components/MyDrawer'
 
@@ -21,7 +23,7 @@ export default App = () => {
 
   return (
     <NavigationContainer>
-      <BottomTabBar/>
+      <MeetingBottomTabs/>
     </NavigationContainer>
   )
 }

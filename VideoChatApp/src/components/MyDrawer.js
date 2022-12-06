@@ -15,6 +15,9 @@ export const MyDrawer = () => {
       <Drawer.Screen
         options={{
           headerTitle: '',
+          headerStyle:{backgroundColor:'#5389fc'},
+          headerTintColor:'#fff',
+          headerShadowVisible:false,
           drawerIcon: ({color}) => (
             <Ionicons name="home-outline" size={22} color={color} />
           ),
@@ -24,6 +27,10 @@ export const MyDrawer = () => {
       />
       <Drawer.Screen
         options={{
+          headerStyle:{backgroundColor:'#5389fc',},
+          headerTintColor:'#fff',
+          headerShadowVisible:false,
+          headerTitle:'',
           drawerIcon: ({color}) => (
             <Ionicons name="person-outline" size={22} color={color} />
           ),

@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import  {MyDrawer}  from '../components/MyDrawer';
-import  {MyMeetingScreen}  from './MyMeetingScreen';
+import  {MyDrawer}  from './MyDrawer';
+import  {MyMeetingScreen}  from '../screens/MyMeetingScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const Tab = createBottomTabNavigator();
