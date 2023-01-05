@@ -1,14 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { RTCView } from 'react-native-webrtc'
 import  Feather  from 'react-native-vector-icons/Feather'
 import  MaterialCommunityIcons  from 'react-native-vector-icons/MaterialCommunityIcons'
+import { GroupCallVideoView, SendbirdCalls } from '@sendbird/calls-react-native'
  
-export const MeetingScreen = () => {
-  return (
+export const MeetingScreen = async() => {
+
+    const [localStream, setLocalStream] = useState();
+    const [videoButton, setVideoButton] = useState();
+    const [micButton, setMicButton] = useState();
+    
+    const room = await SendbirdCalls.getCachedRoomById(ROOM_ID);
+
+    
+    return (
     <View style={styles.conatainer}>
-        <RTCView style={styles.video}/>
-        <RTCView style={styles.localVideo}/>
+        <View>
+      {room.participants.map((participant) => (
+        <GroupCallVideoView
+          participant={participant}
+          roomId={room.roomId}
+          resizeMode={'contain'}
+          style={{}}
+        />
+      ))}
+    </View>
         <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.touchableBtn}>
                 {/* <Feather name="mic" color={'red'} size={20}/> */}

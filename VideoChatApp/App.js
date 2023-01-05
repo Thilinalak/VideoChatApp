@@ -12,19 +12,39 @@ import { SplashScreen } from './src/screens/SplashScreen'
 import { Signin } from './src/screens/Signin'
 import { Signup } from './src/screens/Signup'
 import { MeetingScreen } from './src/screens/MeetingScreen'
+import { PreviewScreen } from './src/screens/PreviewScreen'
+import { WaitingScreen } from './src/screens/WaitingScreen'
 import { EmailVerify } from './src/screens/EmailVerify'
 import { BottomTabBar} from './src/components/BottomTabBar'
 import { MeetingBottomTabs} from './src/components/MeetingBottomTabs'
 import { NavigationContainer } from '@react-navigation/native'
-import { MyDrawer } from './src/components/MyDrawer'
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { ToastProvider } from 'react-native-toast-notifications'
 
+import { MyDrawer } from './src/components/MyDrawer'
+import { SendbirdCalls } from '@sendbird/calls-react-native';
+
+SendbirdCalls.initialize("D2ADBF43-48D5-4581-9655-DA570E761BF5");
+
+const Stack = createNativeStackNavigator();
 
 export default App = () => {
 
   return (
+    <ToastProvider>
     <NavigationContainer>
-      <MeetingBottomTabs/>
+      <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{headerShown:false}}>
+        <Stack.Screen name='SplashScreen' component={SplashScreen}/>
+        <Stack.Screen name='Signin' component={Signin}/>
+        <Stack.Screen name='Signup' component={Signup}/>
+        <Stack.Screen name='EmailVerify' component={EmailVerify}/>
+        <Stack.Screen name='BottomTabBar' component={BottomTabBar}/>
+        <Stack.Screen name='PreviewScreen' component={PreviewScreen}/>
+        <Stack.Screen name='WaitingScreen' component={WaitingScreen}/>
+        <Stack.Screen name='MeetingBottomTabs' component={MeetingBottomTabs}/>
+      </Stack.Navigator>
     </NavigationContainer>
+    </ToastProvider>
   )
 }
 

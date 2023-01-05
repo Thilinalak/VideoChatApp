@@ -19,6 +19,9 @@ export const Profile = () => {
                 <View style={styles.textPosition}>
                 <ProflleText titleText={'Email Address'} text={'Alec@gmail.com'} iconName={'mail'}/>
                 </View>
+                <View style={styles.textPosition}>
+                <ProflleText titleText={'Mobile'} text={'0740158913'} iconName={'phone-portrait'}/>
+                </View>
             </View>
             </View>
         </View>

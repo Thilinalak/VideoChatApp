@@ -255,6 +255,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.sendbird.sdk:sendbird-calls:1.10.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     //noinspection GradleDynamicVersion

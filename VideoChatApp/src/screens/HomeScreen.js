@@ -1,15 +1,28 @@
+import { useFocusEffect } from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {BackHandler, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export const HomeScreen = () => {
+export const HomeScreen = ({navigation}) => {
+
+  useFocusEffect(
+    React.useCallback(()=>{
+      const backhandler = BackHandler.addEventListener('hardwareBackPress',()=> BackHandler.exitApp())
+      return () => backhandler.remove()
+    },[])
+  )
+
+  const onStartNewMeeting = ()=>{
+    navigation.navigate('PreviewScreen',{host:"HOST"})
+  }
+
   return (
     <View style={styles.constainer}>
       <View style={styles.welcomeText}>
         <Text style={[styles.textStyle, {fontWeight: '400'}]}>Hi, Welcome</Text>
       </View>
       <View style={styles.btnPosition}>
-        <TouchableOpacity style={styles.btnCard}>
+        <TouchableOpacity onPress={onStartNewMeeting} style={styles.btnCard}>
           <Ionicons name="add-sharp" size={40} color={'#fff'} />
           <Text style={styles.textStyle}>Start New Meeting</Text>
         </TouchableOpacity>

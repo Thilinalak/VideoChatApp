@@ -1,11 +1,11 @@
 import {React,View,StyleSheet, TextInput,} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-export const TextField = ({onChange, value, iconName , placeHolder, name, secureTextEntry, keyboardType}) => {
+export const TextField = ({onChange, iconName , placeHolder, name, secureTextEntry, keyboardType}) => {
   return (
     <View style={styles.container}>
         <Ionicons style={styles.iconStyle} name={iconName} color='#1934cf' size={20} />
-        <TextInput style={styles.textInputStyle} name={name} onChange={onChange} value={value} 
+        <TextInput onChangeText={onChange} style={styles.textInputStyle} name={name} 
         placeholder={placeHolder} secureTextEntry={secureTextEntry} keyboardType={keyboardType} 
         underlineColorAndroid="transparent" />
     </View>
