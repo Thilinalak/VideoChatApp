@@ -2,7 +2,6 @@ import React, {useRef} from 'react';
 
 import {
   Button,
- 
   StyleSheet,
   TextInput,
   View,
@@ -26,6 +25,7 @@ const Call = () => {
   const [localStream, setLocalStream] = useState(null);
   const [channelId, setChannelId] = useState(null);
   const pc = useRef();
+  
   const servers = {
     iceServers: [
       {

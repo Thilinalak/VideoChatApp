@@ -7,7 +7,7 @@ hangup, join
 }) => {
   return (
     <View style={styles.container}>
-        <Image source={require('../assets/bbimage.jpg')} style={styles.image}/>
+        <Image source={require('../assets/images/bbimage.jpg')} style={styles.image}/>
         <View style={styles.btnContainer}>
             <View style={{marginRight:50}}>
             <Button onPress={join} iconName={'phone'} color={'white'} btnBackgroundColor={'#07b310'}/>
